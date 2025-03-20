@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void swap(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
 int main(){
 	printf("Enter a number\n");
 	int a;
@@ -14,10 +20,7 @@ int main(){
 	scanf(" %c", &c);
 	
 	if(c == 'y'){
-		int *t = &a;
-		*a = &b;
-		int *b = t;
-		
+	    swap(&a,&b);
 		printf("%d is now swapped with %d \n", a,b);
 	}
 	else{
